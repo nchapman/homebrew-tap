@@ -3,7 +3,7 @@ cask "llemme" do
   name "llemme"
   desc "Run local LLMs with llama.cpp and Hugging Face"
   homepage "https://github.com/nchapman/llemme"
-  version "0.2.3"
+  version "0.2.4"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,28 @@ cask "llemme" do
   on_macos do
     on_intel do
       url "https://github.com/nchapman/llemme/releases/download/v#{version}/llemme_#{version}_darwin_amd64.tar.gz"
-      sha256 "8bf1a66a96d55f94897a1d4183bbd13dff7d9e2e80dd230e60d687b63afc9316"
+      sha256 "b7e2968874a2bb146e49f6681820cd8326e101953b5b98d80f5b043c32cb65d2"
     end
     on_arm do
       url "https://github.com/nchapman/llemme/releases/download/v#{version}/llemme_#{version}_darwin_arm64.tar.gz"
-      sha256 "301ba514fe19fb8f402c1aa1d46839ef2c03ceded24236b482153dff21804770"
+      sha256 "52b246ca70f69807c16909f4f4b2e5e63abd28fbbae47852b20848690066a4c4"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/nchapman/llemme/releases/download/v#{version}/llemme_#{version}_linux_amd64.tar.gz"
-      sha256 "458f3e3b77b723a969a5dd1cd8f17a90cc8efc55fbdb7d40c04eb5aeb418045e"
+      sha256 "ae8eaeb01b2f6efa908811004d66e89c1999a56bca0dc95c6463d21b23a601c3"
     end
     on_arm do
       url "https://github.com/nchapman/llemme/releases/download/v#{version}/llemme_#{version}_linux_arm64.tar.gz"
-      sha256 "e3cd2113a2ce95988ef0bce3fa180c68f328aad7a93ae1fa863686fbe5b83691"
+      sha256 "369fae8a646d451e0e649ed6b3dbd10cb227e12dd341736c1b7bf27b7e765d7a"
+    end
+  end
+
+  postflight do
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/llemme"]
     end
   end
 
