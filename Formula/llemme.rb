@@ -5,21 +5,21 @@
 class Llemme < Formula
   desc "Run local LLMs with llama.cpp and Hugging Face"
   homepage "https://github.com/nchapman/llemme"
-  version "0.2.5"
+  version "0.2.6"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/nchapman/llemme/releases/download/v0.2.5/llemme_0.2.5_darwin_amd64.tar.gz"
-      sha256 "75727d83b9fecc3b7040c9f4cb7e3db3f05d409708a5111f72352d292c5acc01"
+      url "https://github.com/nchapman/llemme/releases/download/v0.2.6/llemme_0.2.6_darwin_amd64.tar.gz"
+      sha256 "6a97658dfc30cbbdb6ccd9cc0db14865516067d6f4091ee388005336e58e43f3"
 
       def install
         bin.install "llemme"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/nchapman/llemme/releases/download/v0.2.5/llemme_0.2.5_darwin_arm64.tar.gz"
-      sha256 "44afe14d644b900308c12fcad7f907c97a7db150e9ab715478fb953f90a62a62"
+      url "https://github.com/nchapman/llemme/releases/download/v0.2.6/llemme_0.2.6_darwin_arm64.tar.gz"
+      sha256 "9918cc2c69dbece9e76f50f67765fd6db6e0e23a643e0bf3c3a48fa20ef6fb4e"
 
       def install
         bin.install "llemme"
@@ -29,23 +29,19 @@ class Llemme < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nchapman/llemme/releases/download/v0.2.5/llemme_0.2.5_linux_amd64.tar.gz"
-      sha256 "9b35592a693d527f140da4376b1e1071762a84f6b8b939544455e17bfd85c449"
+      url "https://github.com/nchapman/llemme/releases/download/v0.2.6/llemme_0.2.6_linux_amd64.tar.gz"
+      sha256 "5073135002f505d543323ee977a2a0102c6822f1ef60cd4396b5c1f9780506c8"
       def install
         bin.install "llemme"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nchapman/llemme/releases/download/v0.2.5/llemme_0.2.5_linux_arm64.tar.gz"
-      sha256 "4ba5776af5995df551c23765f3da43d8488f801a874cd9576659e8a893685de5"
+      url "https://github.com/nchapman/llemme/releases/download/v0.2.6/llemme_0.2.6_linux_arm64.tar.gz"
+      sha256 "7ad89c42a1d8bcc6b01d8a08f5ea2c7b940b4b2504f6cf122c2f2609926f944c"
       def install
         bin.install "llemme"
       end
     end
-  end
-
-  def post_install
-    system "/usr/bin/xattr", "-dr", "com.apple.quarantine", bin/"llemme"
   end
 
   service do
