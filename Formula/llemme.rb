@@ -5,21 +5,21 @@
 class Llemme < Formula
   desc "Run local LLMs with llama.cpp and Hugging Face"
   homepage "https://github.com/nchapman/llemme"
-  version "0.4.1"
+  version "0.4.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/nchapman/llemme/releases/download/v0.4.1/llemme_0.4.1_darwin_amd64.tar.gz"
-      sha256 "a8ea91b510a42ae730f153495f0db9e629a8a280497ba8096131110e70d54a63"
+      url "https://github.com/nchapman/llemme/releases/download/v0.4.2/llemme_0.4.2_darwin_amd64.tar.gz"
+      sha256 "1c16d4508b3114620689beeb2d2ca4c2307e06aebc788d5cf8a2e5308f296e3b"
 
       def install
         bin.install "llemme"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/nchapman/llemme/releases/download/v0.4.1/llemme_0.4.1_darwin_arm64.tar.gz"
-      sha256 "210afed0e94692c105cef83a799c825fbf5e60b6e4f8cb00c1e65503ca23eea4"
+      url "https://github.com/nchapman/llemme/releases/download/v0.4.2/llemme_0.4.2_darwin_arm64.tar.gz"
+      sha256 "cfc0f32924f161788ca611ebf00c7898d932c9564fa9db253584a904be80f0d0"
 
       def install
         bin.install "llemme"
@@ -29,15 +29,15 @@ class Llemme < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nchapman/llemme/releases/download/v0.4.1/llemme_0.4.1_linux_amd64.tar.gz"
-      sha256 "3a1d5bcc776e2671b09e71d0216bfeb21d749a14b35c4fa841704781701b5c27"
+      url "https://github.com/nchapman/llemme/releases/download/v0.4.2/llemme_0.4.2_linux_amd64.tar.gz"
+      sha256 "a8c912caa0fb21ad10ba5b02fd0c38324e1be0ee2a021da6fdc25f4a9922ea79"
       def install
         bin.install "llemme"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nchapman/llemme/releases/download/v0.4.1/llemme_0.4.1_linux_arm64.tar.gz"
-      sha256 "9864ae6bef589cf49f5f888f72054784f08546a51931f48e0309648b76848cca"
+      url "https://github.com/nchapman/llemme/releases/download/v0.4.2/llemme_0.4.2_linux_arm64.tar.gz"
+      sha256 "7a4d8ae7c6864f76eb06ee1dea015ada72726770677fceeeb022e982046f5f39"
       def install
         bin.install "llemme"
       end
