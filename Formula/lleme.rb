@@ -5,21 +5,21 @@
 class Lleme < Formula
   desc "Run local LLMs with llama.cpp and Hugging Face"
   homepage "https://github.com/nchapman/lleme"
-  version "0.7.0"
+  version "0.7.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/nchapman/lleme/releases/download/v0.7.0/lleme_0.7.0_darwin_amd64.tar.gz"
-      sha256 "f5ac6b01b61330cba8061505b82be2b9cc82fa1fa70b243319eb93ca5f619d90"
+      url "https://github.com/nchapman/lleme/releases/download/v0.7.1/lleme_0.7.1_darwin_amd64.tar.gz"
+      sha256 "940a6edfdea1721ad4e86034767de1260dc01f4ce864aa02c2828fff7dfedf9a"
 
       def install
         bin.install "lleme"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/nchapman/lleme/releases/download/v0.7.0/lleme_0.7.0_darwin_arm64.tar.gz"
-      sha256 "26d0f8eb777bf55295ec60d11a5a35ec6964dc63637c83270656b4a9e893076f"
+      url "https://github.com/nchapman/lleme/releases/download/v0.7.1/lleme_0.7.1_darwin_arm64.tar.gz"
+      sha256 "0ca795e2828a5529efb5d26b2709f5150bfaa18995f9163db606e1f5ff06a050"
 
       def install
         bin.install "lleme"
@@ -29,15 +29,15 @@ class Lleme < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nchapman/lleme/releases/download/v0.7.0/lleme_0.7.0_linux_amd64.tar.gz"
-      sha256 "9b11da18b253ba522d8260ad6b6f88d0b07984214d534d73a21c5165807f1416"
+      url "https://github.com/nchapman/lleme/releases/download/v0.7.1/lleme_0.7.1_linux_amd64.tar.gz"
+      sha256 "f2f0614b95d8e9f3f18ef284cdcf10e861250c4eaa2442858e34d1b53bc4047a"
       def install
         bin.install "lleme"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nchapman/lleme/releases/download/v0.7.0/lleme_0.7.0_linux_arm64.tar.gz"
-      sha256 "dd8b57e05833777e5b55d4472ec4136929addc3c874e27deef6d115b69aeac42"
+      url "https://github.com/nchapman/lleme/releases/download/v0.7.1/lleme_0.7.1_linux_arm64.tar.gz"
+      sha256 "e75c58c5a6e88322394a2a51bea3e2dafc1a7a43abddb80bd12ea2ce92e59166"
       def install
         bin.install "lleme"
       end
