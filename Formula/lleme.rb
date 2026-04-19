@@ -5,21 +5,21 @@
 class Lleme < Formula
   desc "Run local LLMs with llama.cpp and Hugging Face"
   homepage "https://github.com/nchapman/lleme"
-  version "0.9.0"
+  version "0.9.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/nchapman/lleme/releases/download/v0.9.0/lleme_0.9.0_darwin_amd64.tar.gz"
-      sha256 "5e02e70bd13727a1089195aee6cb9337188cd4c4e4f454d618c923c01e8647b2"
+      url "https://github.com/nchapman/lleme/releases/download/v0.9.1/lleme_0.9.1_darwin_amd64.tar.gz"
+      sha256 "5465d07908354f2b92494847db7b414d52ddbbe5b7cc95f6f684e3d4b4637c2f"
 
       define_method(:install) do
         bin.install "lleme"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/nchapman/lleme/releases/download/v0.9.0/lleme_0.9.0_darwin_arm64.tar.gz"
-      sha256 "e112d229d4e80f5772da3ba549db991fd35f0e3c1ccc99c2bbcbda471542a91e"
+      url "https://github.com/nchapman/lleme/releases/download/v0.9.1/lleme_0.9.1_darwin_arm64.tar.gz"
+      sha256 "70983f97bb2ab2cd5691d169ad57c195af3a8a8f6d0d6e688e49a4334f61a9c1"
 
       define_method(:install) do
         bin.install "lleme"
@@ -29,15 +29,15 @@ class Lleme < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nchapman/lleme/releases/download/v0.9.0/lleme_0.9.0_linux_amd64.tar.gz"
-      sha256 "2750485dcf5c89eab0764c0ebfb2b14768ce15e70836d2e81ff265774e185fd3"
+      url "https://github.com/nchapman/lleme/releases/download/v0.9.1/lleme_0.9.1_linux_amd64.tar.gz"
+      sha256 "1255f8b479fa9001dbef99f8abb9505d266187bbc37b97254f2c9f514c61374c"
       define_method(:install) do
         bin.install "lleme"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nchapman/lleme/releases/download/v0.9.0/lleme_0.9.0_linux_arm64.tar.gz"
-      sha256 "897100bd1e6e8345d58d28e29d06adda8e959a19d9676e77b1818624a2695e58"
+      url "https://github.com/nchapman/lleme/releases/download/v0.9.1/lleme_0.9.1_linux_arm64.tar.gz"
+      sha256 "7254aa33b0db5214e4c179ba2a50d0226ec2dbdf70009b9543045cb88d2cb5c6"
       define_method(:install) do
         bin.install "lleme"
       end
